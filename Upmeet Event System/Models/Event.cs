@@ -16,4 +16,6 @@ public partial class Event
     public string? Location { get; set; }
 
     public int? Attending { get; set; }
+
+    public virtual ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
 }
