@@ -12,7 +12,7 @@ namespace Upmeet_Event_System.Controllers
         EventDbContext _dbContext = new EventDbContext();
         [HttpGet]
         public List<Event> GetAll()
-        {
+        {       
             return _dbContext.Events.ToList();
 
         }
