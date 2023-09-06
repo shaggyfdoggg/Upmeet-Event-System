@@ -1,1 +1,12 @@
-<p>event-form works!</p>
+<h2>Add an Event!</h2>
+<p>Name</p>
+<input type="text" [(ngModel)]="e.name" />
+<p>Description</p>
+<input type="text" [(ngModel)]="e.description" />
+<p>Date and Time</p>
+<input type="datetime" [(ngModel)]="e.dateTime" />
+<p>Location</p>
+<input type="text" [(ngModel)]="e.location" />
+<p>Students Attending</p>
+<input type="number" [(ngModel)]="e.attending" />
+<button (click)="CreateEvent()">Add now</button>

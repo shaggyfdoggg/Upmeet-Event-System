@@ -32,6 +32,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'events', component: ListEventsComponent}
     ])
   ],
   providers: [],

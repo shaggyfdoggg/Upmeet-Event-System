@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Event } from '../models/event';
+import { EventModel } from '../models/event-model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,24 +10,24 @@ export class EventService {
 
   constructor(private http:HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
-GetEvents():Observable<Event[]>{
-  return this.http.get<Event[]>(`${this.baseUrl}api/Event`);
+GetEvents():Observable<EventModel[]>{
+  return this.http.get<EventModel[]>(`${this.baseUrl}api/Events`);
 }
 
-GetEventById(id:number):Observable<Event>{
-  return this.http.get<Event>(`${this.baseUrl}api/Event/${id}`);
+GetEventById(id:number):Observable<EventModel>{
+  return this.http.get<EventModel>(`${this.baseUrl}api/Events/${id}`);
 }
 
-AddEvent(newEvent:Event):Observable<Event>{
-  return this.http.post<Event>(`${this.baseUrl}api/Event`, newEvent);
+AddEvent(newEvent:EventModel):Observable<EventModel>{
+  return this.http.post<EventModel>(`${this.baseUrl}api/Events`, newEvent);
 }
 
 DeleteEvent(id:number){
-  return this.http.delete<Event>(`${this.baseUrl}api/Event/${id}`);
+  return this.http.delete<EventModel>(`${this.baseUrl}api/Events/${id}`);
 }
 
-UpdateEvent(updatedEvent: Event): Observable<Event>{
-  return this.http.put<Event>(`$(this.baseUrl)api/Order/${updatedEvent.id}`, updatedEvent);
+UpdateEvent(updatedEvent: EventModel): Observable<EventModel>{
+  return this.http.put<EventModel>(`$(this.baseUrl)api/Events/${updatedEvent.id}`, updatedEvent);
 }
 }
 

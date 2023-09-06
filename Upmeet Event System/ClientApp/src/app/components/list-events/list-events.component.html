@@ -1,1 +1,29 @@
-<p>list-events works!</p>
+<h1>All Events</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>DateTime</th>
+        <th>Location</th>
+        <th>Attending</th>
+        <th>Favorite?</th>
+    </tr>
+    <tr *ngFor="let e of ListEventsResult">
+        <td>{{e.name}}</td>
+        <td>{{e.description}}</td>
+        <td>{{e.dateTime}}</td>
+        <td>{{e.location}}</td>
+        <th>{{e.attending}}</th>
+        <!-- <th>{{e.favorite?}}</th> -->
+
+    </tr>
+
+</table>
+
+<app-event-form (EventCreated)="NewEvent($event)"></app-event-form>
+
+
+
+
+<!-- <td><button (click)="DeleteEvent(e.id)">Delete Event</button></td> -->
