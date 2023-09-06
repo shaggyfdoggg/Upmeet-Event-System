@@ -13,8 +13,9 @@ export class UserListComponent {
   constructor(private _userService: UserService) { }
 
   ngOnInit():void {
-    this._userService.GetUsers().subscribe((response:UserModel[])=> {
-      console.log(response);
+    console.log('bob')
+    this._userService.GetUsersDistinct().subscribe((response:UserModel[])=> {
+      // console.log(response);
       this.UserListResult = response;
     });
   }

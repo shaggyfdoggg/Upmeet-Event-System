@@ -10,9 +10,14 @@ namespace Upmeet_Event_System.Controllers
     {
         EventDbContext _dbContext = new EventDbContext();
         [HttpGet]
-        public List<Favorite> GetFavorite()
+        public List<Favorite> GetUsers()
         {
             return _dbContext.Favorites.ToList();
+        }
+        [HttpGet("UserNames")]
+        public List<Favorite> GetUserNames()
+        {
+            return _dbContext.Favorites.GroupBy(x => x.Username).Select(x => x.First()).ToList();
         }
         [HttpPost]
         public Favorite AddFavorite([FromBody] Favorite newFavorite)

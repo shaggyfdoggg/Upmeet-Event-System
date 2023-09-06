@@ -13,7 +13,9 @@ export class UserService {
     GetUsers():Observable<UserModel[]>{
       return this.http.get<UserModel[]>(`${this.baseUrl}api/Favorite`);
     }
-    
+    GetUsersDistinct():Observable<UserModel[]>{
+      return this.http.get<UserModel[]>(`${this.baseUrl}api/Favorite/UserNames`);
+    }
     AddUser(newUser:UserModel):Observable<UserModel>{
       return this.http.post<UserModel>(`${this.baseUrl}api/Favorite`, newUser);
     }

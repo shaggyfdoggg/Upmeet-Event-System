@@ -26,10 +26,10 @@ public partial class EventDbContext : DbContext
         //=> optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=SA; Password=EnterPasswordHere123; TrustServerCertificate=true;");
 
         //Tim
-        //=> optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=EventDb; Integrated Security=SSPI;Encrypt=false;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=EventDb; Integrated Security=SSPI;Encrypt=false;TrustServerCertificate=True;");
 
         //Zach
-        => optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=sa; Password=someThingComplicated1234; TrustServerCertificate=true;");
+        //=> optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=sa; Password=someThingComplicated1234; TrustServerCertificate=true;");
     
 
 
