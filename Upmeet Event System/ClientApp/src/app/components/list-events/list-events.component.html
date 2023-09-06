@@ -3,18 +3,19 @@
 <table>
     <tr>
         <th>Name</th>
-        <th>Description</th>
+        <!-- <th>Description</th>
         <th>DateTime</th>
         <th>Location</th>
         <th>Attending</th>
-        <th>Favorite?</th>
+        <th>Favorite?</th> -->
     </tr>
     <tr *ngFor="let e of ListEventsResult">
-        <td>{{e.name}}</td>
-        <td>{{e.description}}</td>
+        <a routerLink="/Events/{{e.id}}">{{e.name}}</a>
+        <!-- <td>{{e.name}}</td> -->
+        <!-- <td>{{e.description}}</td>
         <td>{{e.dateTime}}</td>
         <td>{{e.location}}</td>
-        <th>{{e.attending}}</th>
+        <th>{{e.attending}}</th> -->
         <!-- <th>{{e.favorite?}}</th> -->
 
     </tr>

@@ -30,18 +30,23 @@ namespace Upmeet_Event_System.Controllers
 
             return deleted;
         }
+        //[HttpGet("{UserName}")]
+        //public List<Favorite> GetByUserName(string userName)
+        //{
+        //    return _dbContext.Favorites.Where(c=>c.Username==userName).ToList();
+        //}
         [HttpGet("{UserName}")]
-        public List<Favorite> GetByUserName(string userName)
+        public List<Event> GetEventByUserName(string userName)
         {
-            return _dbContext.Favorites.Where(c=>c.Username==userName).ToList();
-        }
-        [HttpGet("{UserName}")]
-        public List<Favorite> GetEventByUserName(string userName, Favorite x)
-        {
+            List<Event> favoriteEvents = new List<Event>();
             List<Favorite> user= _dbContext.Favorites.Where(c => c.Username == userName).ToList();
-            List<int> eventNumber = user.Select(x => x.EventId-0).ToList();
-                //List<int> applePeces = apples.Select(x => x * 2).ToList();
-            return;
+            List<int> eventNumber = user.Select(x => (int)x.EventId).ToList();
+                foreach(int i in eventNumber)
+            {
+                Event e = _dbContext.Events.FirstOrDefault(y => y.Id == i);
+                favoriteEvents.Add(e);
+            }
+            return favoriteEvents;
         }
     }
 }

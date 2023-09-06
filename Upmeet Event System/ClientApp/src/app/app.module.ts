@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListEventsComponent } from './components/list-events/list-events.component';
 import { EventFormComponent } from './components/event-form/event-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     FetchDataComponent,
     ListEventsComponent,
     EventFormComponent,
-    UserFormComponent
+    UserFormComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
