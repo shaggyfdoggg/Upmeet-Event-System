@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EventModel } from '../models/event-model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,8 +30,5 @@ DeleteEvent(id:number){
 UpdateEvent(updatedEvent: EventModel): Observable<EventModel>{
   return this.http.put<EventModel>(`$(this.baseUrl)api/Events/${updatedEvent.id}`, updatedEvent);
 }
+
 }
-
-
-
-

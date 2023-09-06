@@ -13,6 +13,7 @@ import { ListEventsComponent } from './components/list-events/list-events.compon
 import { EventFormComponent } from './components/event-form/event-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EventDetailsComponent } from './components/event-details/event-details.
     ListEventsComponent,
     EventFormComponent,
     UserFormComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +36,9 @@ import { EventDetailsComponent } from './components/event-details/event-details.
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'events', component: ListEventsComponent}
+      { path: 'events', component: ListEventsComponent},
+      { path: 'Events/:id', component: EventDetailsComponent},
+      { path: 'favorite', component: UserListComponent}
     ])
   ],
   providers: [],
