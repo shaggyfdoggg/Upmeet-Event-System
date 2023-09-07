@@ -55,6 +55,7 @@ namespace Upmeet_Event_System.Controllers
                 foreach(int i in eventNumber)
             {
                 Event e = _dbContext.Events.FirstOrDefault(y => y.Id == i);
+                e.Favorites = null;
                 favoriteEvents.Add(e);
             }
             return favoriteEvents;

@@ -26,6 +26,7 @@ export class UserService {
     }
   
     GetEventByUserName(username:string):Observable<EventModel[]>{
+      console.log(username)
       return this.http.get<EventModel[]>(`${this.baseUrl}api/Favorite/${username}`)
     }
 

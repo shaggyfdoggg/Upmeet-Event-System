@@ -23,10 +23,10 @@ public partial class EventDbContext : DbContext
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
 
         //Forrest
-        => optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=SA; Password=EnterPasswordHere123; TrustServerCertificate=true;");
+       // => optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=SA; Password=EnterPasswordHere123; TrustServerCertificate=true;");
 
         //Tim
-        //=> optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=EventDb; Integrated Security=SSPI;Encrypt=false;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=EventDb; Integrated Security=SSPI;Encrypt=false;TrustServerCertificate=True;");
 
         //Zach
         //=> optionsBuilder.UseSqlServer("Server=localhost,1433; Initial Catalog=EventDb; User ID=sa; Password=someThingComplicated1234; TrustServerCertificate=true;");
@@ -58,9 +58,9 @@ public partial class EventDbContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("username");
 
-            entity.HasOne(d => d.Event).WithMany(p => p.Favorites)
+            entity.HasOne(d => d.Event).WithMany(p => p.Favorites)//
                 .HasForeignKey(d => d.EventId)
-                .HasConstraintName("FK__Favorites__event__44FF419A");
+                .HasConstraintName("FK__Favorites__event__44FF419A");//
         });
 
         OnModelCreatingPartial(modelBuilder);
