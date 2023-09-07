@@ -4,7 +4,9 @@
 <p>Location: {{EventResult.location}}</p>
 <p>Students Attending: {{EventResult.attending}}</p>
 <form>
-    <a>us</a>
-    <input type="text" id="restaurant"  name="restaurant" />  
-    <button>Like</button>
+    <a>username:</a>
+    <input type="text" id="event"  name="event" [(ngModel)]="f.username"/> 
+    <!-- <div [(ngModel)]="EventResult.id">
+    </div>  -->
+    <button (click)="AddEventTOFavorites()">Add to Favorites</button>
 </form>

@@ -28,4 +28,6 @@ export class UserService {
       return this.http.get<UserModel[]>(`${this.baseUrl}api/Favorite/${username}`)
     }
 
+    
+
 }
