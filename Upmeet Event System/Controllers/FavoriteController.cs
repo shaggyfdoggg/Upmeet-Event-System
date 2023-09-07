@@ -46,7 +46,7 @@ namespace Upmeet_Event_System.Controllers
         //{
         //    return _dbContext.Favorites.Where(c=>c.Username==userName).ToList();
         //}
-        [HttpGet("{UserName}")]
+        [HttpGet("{userName}")]
         public List<Event> GetEventByUserName(string userName)
         {
             List<Event> favoriteEvents = new List<Event>();

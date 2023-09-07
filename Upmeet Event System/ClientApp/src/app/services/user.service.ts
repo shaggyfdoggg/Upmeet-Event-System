@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { UserModel } from '../models/user-model';
 import { Observable } from 'rxjs';
+import { EventModel } from '../models/event-model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +25,10 @@ export class UserService {
       return this.http.delete<UserModel>(`${this.baseUrl}api/Favorite/${id}`);
     }
   
-    GetEventByUserName(username:string){
-      return this.http.get<UserModel[]>(`${this.baseUrl}api/Favorite/${username}`)
+    GetEventByUserName(username:string):Observable<EventModel[]>{
+      return this.http.get<EventModel[]>(`${this.baseUrl}api/Favorite/${username}`)
     }
+
     GetUserByUserName(username:string):Observable<UserModel>{
       return this.http.get<UserModel>(`${this.baseUrl}api/Favorite/UserName/${username}`)
     }

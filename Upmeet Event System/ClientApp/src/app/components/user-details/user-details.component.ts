@@ -11,9 +11,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent {
-UserResult:UserModel = {}  as UserModel
-username:string = ""
-//EventResult:EventModel = {}  as EventModel
+UserResult:UserModel = {}  as UserModel;
+username:string = "";
+//EventResult:EventModel[] = {}  as EventModel;
+ListEventsResult: EventModel[]=[];
 
 constructor(private _route: ActivatedRoute, private _eventService:EventService, private _userService:UserService){}
 
@@ -23,13 +24,19 @@ ngOnInit(){
   this.username = String(routeParams.get("username"));
   console.log(this.username);
   
-  this._userService.GetUserByUserName(this.username).subscribe((response:UserModel) => {
+  // this._userService.GetUserByUserName(this.username).subscribe((response:UserModel) => {
+  //   console.log(response);
+  //   this.UserResult = response;
+  // });
+
+  this._userService.GetEventByUserName(this.username).subscribe((response:EventModel[]) => {
     console.log(response);
-    this.UserResult = response;
+    this.ListEventsResult = response;
+  });
+
+
   }
-  
-  );
-  }
+
 
 
 
