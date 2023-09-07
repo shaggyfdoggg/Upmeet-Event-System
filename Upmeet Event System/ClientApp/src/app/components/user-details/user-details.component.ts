@@ -17,18 +17,18 @@ UserResult:UserModel = {}  as UserModel
 constructor(private _route: ActivatedRoute, private _eventService:EventService, private _userService:UserService){}
 
 
-ngOnInit(){
-  const routeParams = this._route.snapshot.paramMap;
-  let id:number = Number(routeParams.get("id"));
-  console.log(id);
+// ngOnInit(){
+//   const routeParams = this._route.snapshot.paramMap;
+//   let id:number = Number(routeParams.get("id"));
+//   console.log(id);
   
-  this._userService..subscribe((response:UserModel) => {
-    console.log(response);
-    this.UserResult = response;
-  }
+//   this._userService..subscribe((response:UserModel) => {
+//     console.log(response);
+//     this.UserResult = response;
+//   }
   
-  );
-  }
+  // );
+  // }
 
 
 
