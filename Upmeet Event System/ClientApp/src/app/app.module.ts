@@ -40,7 +40,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'events', component: ListEventsComponent},
       { path: 'Events/:id', component: EventDetailsComponent},
-      { path: 'favorite', component: UserListComponent}
+      { path: 'favorite', component: UserListComponent},
+      { path: 'User/:username', component: UserDetailsComponent},
     ])
   ],
   providers: [],

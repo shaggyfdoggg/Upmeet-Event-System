@@ -14,6 +14,12 @@ namespace Upmeet_Event_System.Controllers
         {
             return _dbContext.Favorites.ToList();
         }
+        [HttpGet("UserName")]
+        public Favorite GetUserByUserName(string userName)
+        {
+            return _dbContext.Favorites.Find(userName);
+        }
+
         [HttpGet("UserNames")]
         public List<Favorite> GetUserNames()
         {
