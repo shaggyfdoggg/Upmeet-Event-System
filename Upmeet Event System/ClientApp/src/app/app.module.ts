@@ -14,6 +14,7 @@ import { EventFormComponent } from './components/event-form/event-form.component
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
     EventFormComponent,
     UserFormComponent,
     EventDetailsComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

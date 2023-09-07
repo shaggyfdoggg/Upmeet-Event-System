@@ -31,9 +31,24 @@ this._eventService.GetEventById(id).subscribe((response:EventModel) => {
 f:UserModel = {} as UserModel
 @Output() EventFavorited = new EventEmitter<UserModel>();
 
-AddEventTOFavorites(){
+AddEventToFavorites(){
   this.f.eventID=this.EventResult.id
-  this.EventFavorited.emit(this.f);
+  this._userService.AddUser(this.f).subscribe((response:UserModel) =>
+  {
+    console.log(response)
+  });
+  
+  // this.EventFavorited.emit(this.f);
 }
+
+// AddNewOrder(order:OrderModel) 
+// {
+//   this._orderservice.AddOrder(order).subscribe((response:OrderModel)=>
+//   {
+//     console.log(response);
+//     this.AllOrders.push(response);
+//   });
+// }
+
 
 }
