@@ -28,11 +28,8 @@ namespace Upmeet_Event_System.Controllers
         [HttpPost]
         public Favorite AddFavorite([FromBody] Favorite newFavorite)
             {
-         
                 _dbContext.Favorites.Add(newFavorite);
                 _dbContext.SaveChanges();
-        
-            
             return newFavorite;
         }
         //[HttpDelete("{id}")]

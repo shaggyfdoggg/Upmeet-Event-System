@@ -22,7 +22,7 @@ code {
 h1{
   text-align: center;
   margin: 0px;
-  color: rgb(3, 169, 244);
+  color: rgb(149, 32, 3);
 }
 
 body, html {
@@ -32,9 +32,6 @@ body, html {
   background-color: #F3F1F7;
 }
 
-table, th, td, tr {
-  border: 1px solid black;
-}
 
 
 

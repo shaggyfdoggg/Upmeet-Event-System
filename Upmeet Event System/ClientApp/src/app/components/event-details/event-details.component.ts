@@ -43,15 +43,4 @@ AddEventToFavorites(){
   
   // this.EventFavorited.emit(this.f);
 }
-
-// AddNewOrder(order:OrderModel) 
-// {
-//   this._orderservice.AddOrder(order).subscribe((response:OrderModel)=>
-//   {
-//     console.log(response);
-//     this.AllOrders.push(response);
-//   });
-// }
-
-
 }
