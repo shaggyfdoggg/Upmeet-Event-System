@@ -29,25 +29,24 @@ ngOnInit(){
   //   console.log(response);
   //   this.UserResult = response;
   // });
+  this.GetEvent();
 
-  this._userService.GetEventByUserName(this.username).subscribe((response:EventModel[]) => {
-    console.log(response);
-    this.ListEventsResult = response;
-  });
   }
 
-  // DeleteUser(id:number):void{
-  //   let target:number = this.UserListResult.findIndex(e => e.id == id);
-  //   this.UserListResult.splice(target, 1);
+  GetEvent(){
+    this._userService.GetEventByUserName(this.username).subscribe((response:EventModel[]) => {
+      console.log(response);
+      this.ListEventsResult = response;
+  });
+}
 
-  //   this._userService.DeleteUser(id).subscribe((response:UserModel) => {
-  //     console.log(response);
-  //   });
 
   DeleteUser(id:number):void{
     this._userService.DeleteFavoriteEvent(id, this.username).subscribe((response:UserModel) => {
       console.log(response);
+      this.GetEvent();
     })
+    
   }
 
     

@@ -35,7 +35,7 @@ export class UserService {
     }
 
     DeleteFavoriteEvent(eventId:number, username:string){
-      return this.http.delete<UserModel>(`${this.baseUrl}api/Favorite/FavoriteEvent/${eventId}/${username}`)
+      return this.http.delete<UserModel>(`${this.baseUrl}api/Favorite?eventId=${eventId}&userName=${username}`)
     }
     
 

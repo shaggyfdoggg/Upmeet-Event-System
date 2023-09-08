@@ -32,15 +32,15 @@ namespace Upmeet_Event_System.Controllers
             _dbContext.SaveChanges();
             return newFavorite;
         }
-        [HttpDelete("{id}")]
-        public Favorite DeleteFavorite(int id)
-        {
-            Favorite deleted = _dbContext.Favorites.Find(id);
-            _dbContext.Favorites.Remove(deleted);
-            _dbContext.SaveChanges();
+        //[HttpDelete("{id}")]
+        //public Favorite DeleteFavorite(int id)
+        //{
+        //    Favorite deleted = _dbContext.Favorites.Find(id);
+        //    _dbContext.Favorites.Remove(deleted);
+        //    _dbContext.SaveChanges();
 
-            return deleted;
-        }
+        //    return deleted;
+        //}
         //[HttpGet("{UserName}")]
         //public List<Favorite> GetByUserName(string userName)
         //{
@@ -61,7 +61,7 @@ namespace Upmeet_Event_System.Controllers
             return favoriteEvents;
         }
 
-        [HttpDelete("FavoriteEvent")]
+        [HttpDelete]
         public Favorite DeleteEventFavorites(int eventId, string userName)
         {
             List<Favorite> favoriteEvents = new List<Favorite>();
