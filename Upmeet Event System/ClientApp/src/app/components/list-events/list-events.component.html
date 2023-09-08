@@ -4,29 +4,16 @@
     <tr>
         <th>Name</th>
         <th>Date & Time</th>
-        <!-- <th>Description</th>
-        <th>Location</th>
-        <th>Attending</th>
-        <th>Favorite?</th> -->
     </tr>
     <tr *ngFor="let e of ListEventsResult">
         <a href="/Events/{{e.id}}">{{e.name}}</a>
         <td>{{e.dateTime}}</td>
-     
-        <!-- <td>{{e.name}}</td> -->
-        <!-- <td>{{e.description}}</td>
-        <td>{{e.dateTime}}</td>
-        <td>{{e.location}}</td>
-        <th>{{e.attending}}</th> -->
-        <!-- <th>{{e.favorite?}}</th> -->
-
     </tr>
-
 </table>
 
-
+<br>
 <app-user-list></app-user-list>
-
+<br>
 <app-event-form (EventCreated)="NewEvent($event)"></app-event-form>
 
 

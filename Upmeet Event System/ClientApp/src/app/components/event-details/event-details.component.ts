@@ -32,12 +32,14 @@ f:UserModel = {} as UserModel
 @Output() EventFavorited = new EventEmitter<UserModel>();
 
 AddEventToFavorites(){
+  if(this.f.username!=null){
   this.f.eventID=this.EventResult.id
   //this.f = {} as UserModel;
   this._userService.AddUser(this.f).subscribe((response:UserModel) =>
   {
     console.log(response)
   });
+}
   
   // this.EventFavorited.emit(this.f);
 }
