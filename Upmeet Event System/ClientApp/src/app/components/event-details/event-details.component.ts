@@ -33,6 +33,7 @@ f:UserModel = {} as UserModel
 
 AddEventToFavorites(){
   this.f.eventID=this.EventResult.id
+  //this.f = {} as UserModel;
   this._userService.AddUser(this.f).subscribe((response:UserModel) =>
   {
     console.log(response)

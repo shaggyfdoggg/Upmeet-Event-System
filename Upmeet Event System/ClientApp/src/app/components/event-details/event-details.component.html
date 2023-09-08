@@ -1,3 +1,21 @@
+<!-- <script>
+    // Get references to the input and button elements
+    const inputField = document.getElementById("myInput");
+    const submitButton = document.getElementById("myButton");
+  
+    // Add an event listener to the input field for the "input" event
+    inputField.addEventListener("input", function () {
+      // Check if the input field is empty
+      if (inputField.value.trim() === "") {
+        // If it's empty, hide the button
+        submitButton.style.display = "none";
+      } else {
+        // If it has content, show the button
+        submitButton.style.display = "block";
+      }
+    });
+  </script> -->
+
 <h1>{{EventResult.name}}</h1>
 <p>Description: {{EventResult.description}}</p>
 <p>Date and Time: {{EventResult.dateTime}}</p>
@@ -5,8 +23,12 @@
 <p>Students Attending: {{EventResult.attending}}</p>
 <form>
     <a>username:</a>
-    <input type="text" id="event"  name="event" [(ngModel)]="f.username"/> 
+    <input type="text" [(ngModel)]="f.username"/> 
     <!-- <div [(ngModel)]="EventResult.id">
     </div>  -->
     <button (click)="AddEventToFavorites()">Add to Favorites</button>
 </form>
+
+
+
+

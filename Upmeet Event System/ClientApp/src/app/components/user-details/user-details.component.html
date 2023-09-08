@@ -1,7 +1,13 @@
 <h1>User Information:</h1>
 <p>Name: {{username}}</p>
-<p>Favorite Events:</p>
+
 <table>
+    <th>Favorite Events:</th>
+    <tr>
+        <td>Name:</td>
+        <td>Description:</td>
+        <td>Delete</td>
+    </tr>
     <tr *ngFor="let e of ListEventsResult">
         <td>{{e.name}}</td>
         <td>{{e.description}}</td>
