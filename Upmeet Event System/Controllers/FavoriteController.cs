@@ -61,6 +61,20 @@ namespace Upmeet_Event_System.Controllers
             return favoriteEvents;
         }
 
+        [HttpDelete("FavoriteEvent")]
+        public Favorite DeleteEventFavorites(int eventId, string userName)
+        {
+            List<Favorite> favoriteEvents = new List<Favorite>();
+            favoriteEvents = _dbContext.Favorites.Where(e => e.Username == userName).ToList();
+            Favorite deleted = favoriteEvents.FirstOrDefault(f => f.EventId == eventId);
+            _dbContext.Favorites.Remove(deleted);
+            _dbContext.SaveChanges();
+
+            return deleted;
+
+        }
+
+
         
     }
 }

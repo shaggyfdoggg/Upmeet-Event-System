@@ -5,6 +5,7 @@
     <tr *ngFor="let e of ListEventsResult">
         <td>{{e.name}}</td>
         <td>{{e.description}}</td>
+        <td><button (click)="DeleteUser(e.id)" >X</button></td>
         
     </tr>
 </table>

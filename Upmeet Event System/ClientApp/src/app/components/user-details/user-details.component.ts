@@ -15,6 +15,7 @@ UserResult:UserModel = {}  as UserModel;
 username:string = "";
 //EventResult:EventModel[] = {}  as EventModel;
 ListEventsResult: EventModel[]=[];
+//UserListResult:UserModel[] = [];
 
 constructor(private _route: ActivatedRoute, private _eventService:EventService, private _userService:UserService){}
 
@@ -33,11 +34,25 @@ ngOnInit(){
     console.log(response);
     this.ListEventsResult = response;
   });
+  }
 
+  // DeleteUser(id:number):void{
+  //   let target:number = this.UserListResult.findIndex(e => e.id == id);
+  //   this.UserListResult.splice(target, 1);
 
+  //   this._userService.DeleteUser(id).subscribe((response:UserModel) => {
+  //     console.log(response);
+  //   });
+
+  DeleteUser(id:number):void{
+    this._userService.DeleteFavoriteEvent(id, this.username).subscribe((response:UserModel) => {
+      console.log(response);
+    })
+  }
+
+    
   }
 
 
 
 
-}

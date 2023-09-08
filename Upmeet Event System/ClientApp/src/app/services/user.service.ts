@@ -33,6 +33,10 @@ export class UserService {
     GetUserByUserName(username:string):Observable<UserModel>{
       return this.http.get<UserModel>(`${this.baseUrl}api/Favorite/UserName/${username}`)
     }
+
+    DeleteFavoriteEvent(eventId:number, username:string){
+      return this.http.delete<UserModel>(`${this.baseUrl}api/Favorite/FavoriteEvent/${eventId}/${username}`)
+    }
     
 
 }

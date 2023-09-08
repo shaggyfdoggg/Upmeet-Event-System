@@ -19,4 +19,7 @@ export class UserListComponent {
       this.UserListResult = response;
     });
   }
+
+
+
 }
